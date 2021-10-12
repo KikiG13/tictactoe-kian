@@ -25,10 +25,51 @@
     <section class="top-bar">
       <h1>Play Tic Tac Toe!</h1>
     </section>
-    <section>
-      <div class="sign in"></div>
+    <section id="sign-up-in">
+      <form id="sign-up" class="border">
+        <fieldset>
+          <legend>Sign Up</legend>
+          <input
+            type="email"
+            name="credentials[password]"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            name="credentials[password]"
+            placeholder="Password"
+            required
+          />
+          <input
+            type="password"
+            name="credentials[password_confirmation]"
+            placeholder="Password Confirmation"
+            required
+          />
+          <button class="btn btn-primary">Sign Up</button>
+        </fieldset>
+      </form>
 
+      <form id="sign-in" class="border">
+        <legend>Sign In</legend>
+        <fieldset>
+          <input
+            type="email"
+            name="credentials[email]"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            name="credentials[password]"
+            placeholder="Password"
+            required
+          />
 
+          <button class="btn btn-primary">Sign In</button>
+        </fieldset>
+      </form>
     </section>
     <section class="board">
       <div class="container">
@@ -51,10 +92,40 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="sign out"></div>
+    <section id="after-sign-in">
+      <form id="change-password" class="border">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input
+            type="password"
+            name="passwords[old]"
+            placeholder="Old Password"
+            required
+          />
+          <input
+            type="password"
+            name="passwords[new]"
+            placeholder="New Password"
+            required
+          />
 
+          <button class="btn btn-primary">Change Password</button>
+        </fieldset>
+      </form>
+
+      <form id="sign-out" class="border">
+        <legend>Sign Out</legend>
+        <fieldset>
+          <button class="btn btn-primary">Sign Out</button>
+        </fieldset>
+      </form>
     </section>
+
+    <section>
+      <div id="fail-message"></div>
+      <div id="display-message"></div>
+    </section>
+    
     <section class="footer">
       <p>Winner</p>
     </section>
