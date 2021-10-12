@@ -8,9 +8,9 @@ const store = require("../store");
 
 const signUp = function (formData) {
   return $.ajax({
-    url: `${config.apiUrl}/sign-up`,
+    url: `${config.apiUrl.development}/sign-up`,
     method: "POST",
-    data: formData,
+    data: formData
   });
 };
 
@@ -18,7 +18,7 @@ const signIn = function (formData) {
   return $.ajax({
     url: `${config.apiUrl}/sign-in`,
     method: "POST",
-    data: formData,
+    data: formData
   });
 };
 
@@ -30,7 +30,7 @@ const changePassword = function (formData) {
     data: formData,
     headers: {
       Authorization: "Bearer " + store.user.token,
-    },
+    }
   });
 };
 
@@ -40,7 +40,7 @@ const signOut = function (formData) {
     method: "DELETE",
     headers: {
       Authorization: "Bearer " + store.user.token,
-    },
+    }
   });
 };
 

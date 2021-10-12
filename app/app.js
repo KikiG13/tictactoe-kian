@@ -10,4 +10,8 @@ $(() => {
   $("#sign-in").on("submit", authEvents.onSignIn);
   $("#change-password").on("submit", authEvents.onChangePassword);
   $("#sign-out").on("submit", authEvents.onSignOut);
+
+  $("#col-1a").on("click", () => {
+    $("#col-1a").text("X")
+  })
 });
