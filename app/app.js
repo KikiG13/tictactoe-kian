@@ -1,8 +1,18 @@
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
+const playerOne = "X";
+const playerTwo = "O";
+let playerMove = 1;
+
 const authEvents = require("./auth/events");
-// use require without a reference to ensure a file is bundled
-// require('./example')
+
+const turns = function (event) {
+  console.log(event.target.id);
+  if (playerMove % 2 === 1) {
+    $(`#${event.target.id}`).html(playerOne);
+  } else {
+    $(`#${event.target.id}`).html(playerTwo);
+  }
+  playerMove++
+}
 
 $(() => {
   // your JS code goes here
@@ -11,7 +21,9 @@ $(() => {
   $("#change-password").on("submit", authEvents.onChangePassword);
   $("#sign-out").on("submit", authEvents.onSignOut);
 
-  $("#col-1a").on("click", () => {
-    $("#col-1a").text("X")
-  })
+  $("#box").on("click", turns);
+
+  //   $("#col-1a").on("click", () => {
+  //     $("#col-1a").text("X")
+  //   })
 });

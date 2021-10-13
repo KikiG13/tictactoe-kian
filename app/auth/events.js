@@ -45,6 +45,12 @@ const onSignOut = function () {
     .catch(ui.signOutFailure);
 };
 
+// let
+
+// const userMove = function () {
+
+// }
+
 
 module.exports = {
   onSignUp,

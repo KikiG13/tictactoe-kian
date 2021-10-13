@@ -8,7 +8,7 @@ const store = require("../store");
 
 const signUp = function (formData) {
   return $.ajax({
-    url: `${config.apiUrl.development}/sign-up`,
+    url: `${config.apiUrl}/sign-up`,
     method: "POST",
     data: formData
   });
