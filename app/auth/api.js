@@ -1,15 +1,15 @@
 
 
 // require the config file, so have our API's url
-const config = require("../config");
+const config = require('../config');
 // require the store file, so we have access to the store object
 // so that we had the user's token when making authenticated requests
-const store = require("../store");
+const store = require('../store');
 
 const signUp = function (formData) {
   return $.ajax({
     url: `${config.apiUrl}/sign-up`,
-    method: "POST",
+    method: 'POST',
     data: formData
   });
 };
@@ -17,16 +17,16 @@ const signUp = function (formData) {
 const signIn = function (formData) {
   return $.ajax({
     url: `${config.apiUrl}/sign-in`,
-    method: "POST",
+    method: 'POST',
     data: formData
   });
 };
 const newGame = function (formData) {
   return $.ajax({
     url: `${config.apiUrl}/new-game`,
-    method: "POST",
+    method: 'POST',
     headers: {
-      Authorization: "Bearer " + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   });
 };
@@ -35,10 +35,10 @@ const newGame = function (formData) {
 const changePassword = function (formData) {
   return $.ajax({
     url: `${config.apiUrl}/change-password`,
-    method: "PATCH",
+    method: 'PATCH',
     data: formData,
     headers: {
-      Authorization: "Bearer " + store.user.token,
+      Authorization: 'Bearer ' + store.user.token,
     }
   });
 };
@@ -46,9 +46,9 @@ const changePassword = function (formData) {
 const signOut = function (formData) {
   return $.ajax({
     url: `${config.apiUrl}/sign-out`,
-    method: "DELETE",
+    method: 'DELETE',
     headers: {
-      Authorization: "Bearer " + store.user.token,
+      Authorization: 'Bearer ' + store.user.token,
     }
   });
 };

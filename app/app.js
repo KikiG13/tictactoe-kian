@@ -1,5 +1,5 @@
-const playerOne = "X";
-const playerTwo = "O";
+const playerOne = 'X';
+const playerTwo = 'O';
 let playerMove = 1;
 // const winPatterns = {
 //   win1: [#col-1a, #col-1b, #col-1c]
@@ -13,7 +13,7 @@ let playerMove = 1;
 // }
 
 
-const authEvents = require("./auth/events");
+const authEvents = require('./auth/events');
 
 const turns = function (event) {
   console.log(event.target.id);
@@ -29,15 +29,15 @@ const turns = function (event) {
 
 $(() => {
   // your JS code goes here
-  $("#sign-up").on("submit", authEvents.onSignUp);
-  $("#sign-in").on("submit", authEvents.onSignIn);
-  $("#change-password").on("submit", authEvents.onChangePassword);
-  $("#sign-out").on("submit", authEvents.onSignOut);
-  $("#new-game").on("click", authEvents.onNewGame);
+  $('#sign-up').on('submit', authEvents.onSignUp);
+  $('#sign-in').on('submit', authEvents.onSignIn);
+  $('#change-password').on('submit', authEvents.onChangePassword);
+  $('#sign-out').on('submit', authEvents.onSignOut);
+  $('#new-game').on('click', authEvents.onNewGame);
 
-  $("#box").on("click", turns);
+  $('#box').on('click', turns);
 
-  //   $("#col-1a").on("click", () => {
-  //     $("#col-1a").text("X")
+  //   $('#col-1a').on('click', () => {
+  //     $('#col-1a').text('X')
   //   })
 });

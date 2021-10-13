@@ -1,12 +1,12 @@
-const { apiUrl } = require("../config");
+const { apiUrl } = require('../config');
 
 // require the getFormFields function to get data from our forms
-const getFormFields = require("../../lib/get-form-fields");
+const getFormFields = require('../../lib/get-form-fields');
 
 // require our api auth functions
-const api = require("./api");
+const api = require('./api');
 // require our ui functions to update the page
-const ui = require("./ui");
+const ui = require('./ui');
 
 const onSignUp = function (event) {
   event.preventDefault();
