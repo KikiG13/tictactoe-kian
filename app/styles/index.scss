@@ -8,6 +8,10 @@ body {
   margin: 5px;
 }
 
+.before-new-game {
+  display: none;
+}
+
 .board {
   display: flex;
   justify-content: center;

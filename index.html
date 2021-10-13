@@ -31,7 +31,7 @@
           <legend>Sign Up</legend>
           <input
             type="email"
-            name="credentials[password]"
+            name="credentials[email]"
             placeholder="Email"
             required
           />
@@ -71,28 +71,34 @@
         </fieldset>
       </form>
     </section>
-    <section class="board">
-      <div class="container" id="box">
-        <div class="row-1">
-          <div id="col-1a">1a</div>
-          <div id="col-1b">1b</div>
-          <div id="col-1c">1c</div>
-        </div>
+    <section class="before-new-game">
 
-        <div class="row-2">
-          <div id="col-2a">2a</div>
-          <div id="col-2b">2b</div>
-          <div id="col-2c">2c</div>
-        </div>
+      <section class="board">
+        <div class="container" id="box">
+          <div class="row-1">
+            <div id="col-1a">1a</div>
+            <div id="col-1b">1b</div>
+            <div id="col-1c">1c</div>
+          </div>
 
-        <div class="row-3">
-          <div id="col-3a">3a</div>
-          <div id="col-3b">3b</div>
-          <div id="col-3c">3c</div>
+          <div class="row-2">
+            <div id="col-2a">2a</div>
+            <div id="col-2b">2b</div>
+            <div id="col-2c">2c</div>
+          </div>
+
+          <div class="row-3">
+            <div id="col-3a">3a</div>
+            <div id="col-3b">3b</div>
+            <div id="col-3c">3c</div>
+          </div>
         </div>
-      </div>
+      </section>
     </section>
     <section id="after-sign-in">
+
+      <button id="new-game" class="btn btn-primary">New game</button>
+
       <form id="change-password" class="border">
         <fieldset>
           <legend>Change Password</legend>

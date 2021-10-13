@@ -21,6 +21,15 @@ const signIn = function (formData) {
     data: formData
   });
 };
+const newGame = function (formData) {
+  return $.ajax({
+    url: `${config.apiUrl}/new-game`,
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + store.user.token
+    }
+  });
+};
 
 
 const changePassword = function (formData) {
@@ -49,7 +58,8 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  newGame
 
 }
 

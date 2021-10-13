@@ -28,6 +28,16 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure);
 };
 
+const onNewGame = function (event) {
+  event.preventDefault();
+  const form = event.target;
+  const formData = getFormFields(form);
+  api
+    .newGame(formData)
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFailure);
+}
+
 const onChangePassword = function (event) {
   event.preventDefault();
   const form = event.target;
@@ -56,5 +66,6 @@ module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onNewGame
 }
