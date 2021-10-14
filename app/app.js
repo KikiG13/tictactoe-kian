@@ -34,6 +34,8 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword);
   $('#sign-out').on('submit', authEvents.onSignOut);
   $('#new-game').on('click', authEvents.onNewGame);
+  $('#play-again').on('click', authEvents.onNewGame);
+  $('.before-new-game').hide()
 
   $('#box').on('click', turns);
 

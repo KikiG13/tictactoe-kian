@@ -41,8 +41,8 @@ const newGameSuccess = function (responseData) {
   $('#display-message').removeClass();
   $('#display-message').addClass('text-success');
   $('form').trigger('reset');
-  $('#before-new-game').show();
-  $('#box').show();
+  $('.before-new-game').show();
+  $('.before-new-game').trigger('reset');
   console.log('responseData is', responseData);
 };
 
@@ -94,4 +94,6 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
+  newGameSuccess,
+  newGameFailure
 };

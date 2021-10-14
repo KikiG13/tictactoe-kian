@@ -30,10 +30,9 @@ const onSignIn = function (event) {
 
 const onNewGame = function (event) {
   event.preventDefault();
-  const form = event.target;
-  const formData = getFormFields(form);
+  console.log('I got clicked');
   api
-    .newGame(formData)
+    .newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure);
 }
@@ -67,5 +66,6 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onNewGame
+  onNewGame,
+  onPlayAgain
 }

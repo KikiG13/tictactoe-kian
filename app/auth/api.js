@@ -21,10 +21,11 @@ const signIn = function (formData) {
     data: formData
   });
 };
-const newGame = function (formData) {
+const newGame = function () {
   return $.ajax({
-    url: `${config.apiUrl}/new-game`,
+    url: `${config.apiUrl}/games`,
     method: 'POST',
+    data: {},
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
