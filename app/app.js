@@ -1,6 +1,9 @@
 const playerOne = 'X';
 const playerTwo = 'O';
 let playerMove = 1;
+
+const comboOne = []
+
 // const winPatterns = {
 //   win1: [#col-1a, #col-1b, #col-1c]
 //   win2: [#col-2a, #col-2b, #col-2c]
