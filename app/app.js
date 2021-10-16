@@ -1,6 +1,7 @@
 const playerOne = 'X';
 const playerTwo = 'O';
 let playerMove = 1;
+let board = ['', '', '', '', '', '', '', '', '']
 
 const comboOne = []
 
@@ -22,18 +23,29 @@ const turns = function (event) {
   console.log(event.target.id);
   if (playerMove % 2 === 1) {
     $(`#${event.target.id}`).html(playerOne);
+    playerMove++
   } else {
     $(`#${event.target.id}`).html(playerTwo);
+    playerMove++
   }
-  playerMove++
+  noRepeat(event)
+}
+
+const boardArray = function() {
+  if (playerMove % 2 === 1) {
+
+  }
 }
 
 const noRepeat = function (event) {
-  if (`#${event.target.id}` === 'x' || `#${event.target.id}` === 'o') {
-    console.error('You cannot select this box');
-  } else {
-    return turns
+  if ($(`#${event.target.id}`).html() === 'X' || $(`#${event.target.id}`).html() === 'O') {
+    $(`#${event.target.id}`).off('click')
+    console.error('You cannot select this box')
   }
+}
+
+const winningCombos = function () {
+
 }
 
 // const noTurn = function () {
