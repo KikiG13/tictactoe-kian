@@ -3,10 +3,11 @@ const playerTwo = 'O';
 let playerMove = 1;
 let currentPlayer = 'X';
 let board = ['', '', '', '', '', '', '', '', ''];
+let gameOver = true
 
 // const winPatterns = {
-//   win1: [#col-1a, #col-1b, #col-1c]
-//   win2: [#col-2a, #col-2b, #col-2c]
+  //   win1: [#col-1a, #col-1b, #col-1c]
+  //   win2: [#col-2a, #col-2b, #col-2c]
 //   win3: [#col-3a, #col-3b, #col-3c]
 //   win4: [#col-1a, #col-2a, #col-3a]
 //   win5: [#col-1b, #col-2b, #col-3b]
@@ -59,18 +60,26 @@ const boardArray = function (id) {
 
 // const noRepeat = function (event) {
 //   if (
-//     $(`#${event.target.id}`).html() === 'X' ||
+  //     $(`#${event.target.id}`).html() === 'X' ||
 //     $(`#${event.target.id}`).html() === 'O'
 //   ) {
-//     $(`#${event.target.id}`).off('click');
+  //     $(`#${event.target.id}`).off('click');
 //     console.error('You cannot select this box');
 //   }
 // };
+const playerWon = function () {
+
+
+}
 
 const winningCombos = function () {
   console.log(board);
+  const tie = function (array) {
+    return array !== ''
+  }
   if (board[0] === board[1] && board[0] === board[2] && board[0] !== '') {
     console.log(currentPlayer, 'Wins!');
+    $('.footer').html(currentPlayer, 'Wins!')
   } else if (board[3] === board[4] && board[3] === board[5] && board[3] !== '') {
     console.log(currentPlayer, 'Wins!');
   } else if (board[6] === board[7] && board[6] === board[8] && board[6] !== '') {
@@ -85,7 +94,7 @@ const winningCombos = function () {
     console.log(currentPlayer, 'Wins!');
   } else if (board[2] === board[4] && board[2] === board[6] && board[2] !== '') {
     console.log(currentPlayer, 'Wins!');
-  } else {
+  } else if (board.every(tie)) {
     console.log('Its a tie!')
   }
 }
