@@ -32,9 +32,9 @@ const onNewGame = function (event) {
   event.preventDefault();
   console.log('I got clicked');
   api
-    .newGame()
-    .then(ui.newGameSuccess)
-    .catch(ui.newGameFailure);
+  .newGame()
+  .then(ui.newGameSuccess)
+  .catch(ui.newGameFailure);
 }
 
 const onChangePassword = function (event) {

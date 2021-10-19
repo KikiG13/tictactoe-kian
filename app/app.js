@@ -47,42 +47,37 @@ const boardArray = function (id) {
   console.log(board);
 };
 
-const playerWon = function () {
-
-}
-
 const winningCombos = function () {
   console.log(board);
   const tie = function (array) {
     return array !== ''
   }
   if (board[0] === board[1] && board[0] === board[2] && board[0] !== '') {
-    console.log(currentPlayer, 'Wins!');
-    $('.footer').html(currentPlayer, 'Wins!')
+    $('.footer').html(`${currentPlayer} Wins!`)
     $('#box').off()
   } else if (board[3] === board[4] && board[3] === board[5] && board[3] !== '') {
-    console.log(currentPlayer, 'Wins!');
+    $('.footer').html(`${currentPlayer}, Wins!`)
     $('#box').off()
   } else if (board[6] === board[7] && board[6] === board[8] && board[6] !== '') {
-    console.log(currentPlayer, 'Wins!');
+    $('.footer').html(`${currentPlayer}, Wins!`)
     $('#box').off()
   } else if (board[0] === board[3] && board[0] === board[6] && board[0] !== '') {
-    console.log(currentPlayer, 'Wins!');
+    $('.footer').html(`${currentPlayer}, Wins!`)
     $('#box').off()
   } else if (board[1] === board[4] && board[1] === board[7] && board[1] !== '') {
-    console.log(currentPlayer, 'Wins!');
+    $('.footer').html(`${currentPlayer}, Wins!`)
     $('#box').off()
   } else if (board[2] === board[5] && board[2] === board[8] && board[2] !== '') {
-    console.log(currentPlayer, 'Wins!');
+    $('.footer').html(`${currentPlayer}, Wins!`)
     $('#box').off()
   } else if (board[0] === board[4] && board[0] === board[8] && board[0] !== '') {
-    console.log(currentPlayer, 'Wins!');
+    $('.footer').html(`${currentPlayer}, Wins!`)
     $('#box').off()
   } else if (board[2] === board[4] && board[2] === board[6] && board[2] !== '') {
-    console.log(currentPlayer, 'Wins!');
+    $('.footer').html(`${currentPlayer}, Wins!`)
     $('#box').off()
   } else if (board.every(tie)) {
-    console.log('Its a tie!')
+    $('.footer').html('Its a draw!')
     $('#box').off()
   }
 }
@@ -99,7 +94,10 @@ const playAgain = function () {
   $('#col-3b').html('');
   $('#col-3c').html('');
   board = ['', '', '', '', '', '', '', '', ''];
+  $('.footer').html('')
   $('#box').on('click', turns)
+  $('#display-message').text('Play again!')
+  $('#new-game').hide()
 };
 
 $(() => {
@@ -111,6 +109,7 @@ $(() => {
   $('#new-game').on('click', authEvents.onNewGame);
   $('#play-again').on('click', playAgain);
   $('.before-new-game').hide();
-  playAgain()
+  $('#after-sign-in').hide()
+  // playAgain()
   $('#box').on('click', turns);
 });

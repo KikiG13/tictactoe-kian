@@ -1,6 +1,7 @@
 const store = require('../store');
 
 const signUpSuccess = function (responseData) {
+  $('#fail-message').hide()
   $('#display-message').text('Sign up successful!');
   $('#display-message').removeClass();
   $('#display-message').addClass('text-success');
@@ -18,12 +19,14 @@ const signUpFailure = function (error) {
 const signInSuccess = function (responseData) {
   store.user = responseData.user;
   console.log('store is', store);
+  $('#fail-message').hide()
   $('#display-message').text('Sign in successful!');
   $('#display-message').removeClass();
   $('#display-message').addClass('text-success');
   $('form').trigger('reset');
   $('#before-sign-in').hide();
   $('#after-sign-in').show();
+  $('#sign-up-in').hide()
   console.log('responseData is', responseData);
 };
 
@@ -43,6 +46,8 @@ const newGameSuccess = function (responseData) {
   $('form').trigger('reset');
   $('.before-new-game').show();
   $('.before-new-game').trigger('reset');
+  $('#new-game').hide()
+  $('#change-password').hide()
   console.log('responseData is', responseData);
 };
 
