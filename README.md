@@ -12,10 +12,10 @@ Good luck!
 
 (https://kikig13.github.io/tictactoe-kian)
 
-
+## Wireframe
 [Imgur](https://i.imgur.com/dOmcbCT.jpg)
 
-##User Stories
+## User Stories
    -As a user I want the webpage to be be clear so that I'm not confused.
    -As a user I want to sign up once so that I don't have to create an account every time I play.
    -As a user I want to sign out so that my account is secure.
