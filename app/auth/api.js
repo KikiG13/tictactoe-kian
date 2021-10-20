@@ -1,26 +1,25 @@
 
-
 // require the config file, so have our API's url
-const config = require('../config');
+const config = require('../config')
 // require the store file, so we have access to the store object
 // so that we had the user's token when making authenticated requests
-const store = require('../store');
+const store = require('../store')
 
 const signUp = function (formData) {
   return $.ajax({
     url: `${config.apiUrl}/sign-up`,
     method: 'POST',
     data: formData
-  });
-};
+  })
+}
 
 const signIn = function (formData) {
   return $.ajax({
     url: `${config.apiUrl}/sign-in`,
     method: 'POST',
     data: formData
-  });
-};
+  })
+}
 const newGame = function () {
   return $.ajax({
     url: `${config.apiUrl}/games`,
@@ -29,9 +28,8 @@ const newGame = function () {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
-  });
-};
-
+  })
+}
 
 const changePassword = function (formData) {
   return $.ajax({
@@ -41,8 +39,8 @@ const changePassword = function (formData) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
-  });
-};
+  })
+}
 
 const signOut = function (formData) {
   return $.ajax({
@@ -51,9 +49,8 @@ const signOut = function (formData) {
     headers: {
       Authorization: 'Bearer ' + store.user.token,
     }
-  });
-};
-
+  })
+}
 
 module.exports = {
   signUp,
@@ -63,4 +60,3 @@ module.exports = {
   newGame
 
 }
-
