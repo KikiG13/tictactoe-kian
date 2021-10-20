@@ -1,22 +1,22 @@
+const store = require('./store')
+const authEvents = require('./auth/events');
 const playerOne = 'X';
 const playerTwo = 'O';
-let playerMove = 1;
+store.playerMove = 1;
 let currentPlayer = 'X';
-let board = ['', '', '', '', '', '', '', '', ''];
-let gameOver = true
+store.board = ['', '', '', '', '', '', '', '', ''];
 
-const authEvents = require('./auth/events');
 
-const turns = function (event) {
+store.turns = function (event) {
   console.log(event.target.id);
   if ($(event.target).html() === '') {
-    if (playerMove % 2 === 1) {
+    if (store.playerMove % 2 === 1) {
       $(`#${event.target.id}`).html(playerOne);
-      playerMove++;
+      store.playerMove++;
       currentPlayer = playerOne;
     } else {
       $(`#${event.target.id}`).html(playerTwo);
-      playerMove++;
+      store.playerMove++;
       currentPlayer = playerTwo;
     }
     boardArray(event.target.id);
@@ -26,64 +26,64 @@ const turns = function (event) {
 
 const boardArray = function (id) {
   if (id === 'col-1a') {
-    board[0] = currentPlayer;
+    store.board[0] = currentPlayer;
   } else if (id === 'col-1b') {
-    board[1] = currentPlayer;
+    store.board[1] = currentPlayer;
   } else if (id === 'col-1c') {
-    board[2] = currentPlayer;
+    store.board[2] = currentPlayer;
   } else if (id === 'col-2a') {
-    board[3] = currentPlayer;
+    store.board[3] = currentPlayer;
   } else if (id === 'col-2b') {
-    board[4] = currentPlayer;
+    store.board[4] = currentPlayer;
   } else if (id === 'col-2c') {
-    board[5] = currentPlayer;
+    store.board[5] = currentPlayer;
   } else if (id === 'col-3a') {
-    board[6] = currentPlayer;
+    store.board[6] = currentPlayer;
   } else if (id === 'col-3b') {
-    board[7] = currentPlayer;
+    store.board[7] = currentPlayer;
   } else if (id === 'col-3c') {
-    board[8] = currentPlayer;
+    store.board[8] = currentPlayer;
   }
-  console.log(board);
+  console.log(store.board);
 };
 
 const winningCombos = function () {
-  console.log(board);
+  console.log(store.board);
   const tie = function (array) {
     return array !== ''
   }
-  if (board[0] === board[1] && board[0] === board[2] && board[0] !== '') {
+  if (store.board[0] === store.board[1] && store.board[0] === store.board[2] && store.board[0] !== '') {
     $('.footer').html(`${currentPlayer} Wins!`)
     $('#box').off()
-  } else if (board[3] === board[4] && board[3] === board[5] && board[3] !== '') {
-    $('.footer').html(`${currentPlayer}, Wins!`)
+  } else if (store.board[3] === store.board[4] && store.board[3] === store.board[5] && store.board[3] !== '') {
+    $('.footer').html(`${currentPlayer} Wins!`)
     $('#box').off()
-  } else if (board[6] === board[7] && board[6] === board[8] && board[6] !== '') {
-    $('.footer').html(`${currentPlayer}, Wins!`)
+  } else if (store.board[6] === store.board[7] && store.board[6] === store.board[8] && store.board[6] !== '') {
+    $('.footer').html(`${currentPlayer} Wins!`)
     $('#box').off()
-  } else if (board[0] === board[3] && board[0] === board[6] && board[0] !== '') {
-    $('.footer').html(`${currentPlayer}, Wins!`)
+  } else if (store.board[0] === store.board[3] && store.board[0] === store.board[6] && store.board[0] !== '') {
+    $('.footer').html(`${currentPlayer} Wins!`)
     $('#box').off()
-  } else if (board[1] === board[4] && board[1] === board[7] && board[1] !== '') {
-    $('.footer').html(`${currentPlayer}, Wins!`)
+  } else if (store.board[1] === store.board[4] && store.board[1] === store.board[7] && store.board[1] !== '') {
+    $('.footer').html(`${currentPlayer} Wins!`)
     $('#box').off()
-  } else if (board[2] === board[5] && board[2] === board[8] && board[2] !== '') {
-    $('.footer').html(`${currentPlayer}, Wins!`)
+  } else if (store.board[2] === store.board[5] && store.board[2] === store.board[8] && store.board[2] !== '') {
+    $('.footer').html(`${currentPlayer} Wins!`)
     $('#box').off()
-  } else if (board[0] === board[4] && board[0] === board[8] && board[0] !== '') {
-    $('.footer').html(`${currentPlayer}, Wins!`)
+  } else if (store.board[0] === store.board[4] && store.board[0] === store.board[8] && store.board[0] !== '') {
+    $('.footer').html(`${currentPlayer} Wins!`)
     $('#box').off()
-  } else if (board[2] === board[4] && board[2] === board[6] && board[2] !== '') {
-    $('.footer').html(`${currentPlayer}, Wins!`)
+  } else if (store.board[2] === store.board[4] && store.board[2] === store.board[6] && store.board[2] !== '') {
+    $('.footer').html(`${currentPlayer} Wins!`)
     $('#box').off()
-  } else if (board.every(tie)) {
-    $('.footer').html('Its a draw!')
+  } else if (store.board.every(tie)) {
+    $('.footer').html('Its a Draw!')
     $('#box').off()
   }
 }
 
 const playAgain = function () {
-  playerMove = 1;
+  store.playerMove = 1;
   $('#col-1a').html('');
   $('#col-1b').html('');
   $('#col-1c').html('');
@@ -93,11 +93,14 @@ const playAgain = function () {
   $('#col-3a').html('');
   $('#col-3b').html('');
   $('#col-3c').html('');
-  board = ['', '', '', '', '', '', '', '', ''];
+  store.board = ['', '', '', '', '', '', '', '', ''];
   $('.footer').html('')
-  $('#box').on('click', turns)
+  $('#box').off('click', store.turns)
+  $('#box').on('click', store.turns)
   $('#display-message').text('Play again!')
   $('#new-game').hide()
+  $('#box').show()
+  $('.footer').show()
 };
 
 $(() => {
@@ -111,5 +114,6 @@ $(() => {
   $('.before-new-game').hide();
   $('#after-sign-in').hide()
   // playAgain()
-  $('#box').on('click', turns);
+  $('#box').on('click', store.turns);
+  $('#play-again').hide()
 });

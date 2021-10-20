@@ -27,6 +27,8 @@ const signInSuccess = function (responseData) {
   $("#before-sign-in").hide();
   $("#after-sign-in").show();
   $("#sign-up-in").hide();
+  $('#new-game').show();
+  $('#play-again').hide()
   console.log("responseData is", responseData);
 };
 
@@ -48,6 +50,12 @@ const newGameSuccess = function (responseData) {
   $(".before-new-game").trigger("reset");
   $("#new-game").hide();
   $("#change-password").hide();
+  $('#box').show()
+  $('#box').off('click', store.turns)
+  $('#box').on('click', store.turns)
+  $('.footer').show()
+  $('#play-again').show()
+
   console.log("responseData is", responseData);
 };
 
@@ -74,6 +82,18 @@ const changePasswordFailure = function (error) {
 };
 
 const signOutSuccess = function (responseData) {
+  store.playerMove = 1;
+  $('#col-1a').html('');
+  $('#col-1b').html('');
+  $('#col-1c').html('');
+  $('#col-2a').html('');
+  $('#col-2b').html('');
+  $('#col-2c').html('');
+  $('#col-3a').html('');
+  $('#col-3b').html('');
+  $('#col-3c').html('');
+  store.board = ['', '', '', '', '', '', '', '', ''];
+  $('.footer').html('')
   $("#display-message").text("Sign out successful!");
   $("#display-message").removeClass();
   $("#display-message").addClass("text-success");
