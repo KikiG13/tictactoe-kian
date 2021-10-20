@@ -47,11 +47,12 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure);
 };
 
-const onSignOut = function () {
+const onSignOut = function (event) {
+  event.preventDefault()
   api
-    .signOut(formData)
+    .signOut()
     .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure);
+    .catch(ui.signOutFailure)
 };
 
 // let
@@ -66,5 +67,5 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onNewGame,
+  onNewGame
 }

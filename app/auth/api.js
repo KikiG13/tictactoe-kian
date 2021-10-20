@@ -39,7 +39,7 @@ const changePassword = function (formData) {
     method: 'PATCH',
     data: formData,
     headers: {
-      Authorization: 'Bearer ' + store.user.token,
+      Authorization: 'Bearer ' + store.user.token
     }
   });
 };
@@ -48,7 +48,6 @@ const signOut = function (formData) {
   return $.ajax({
     url: `${config.apiUrl}/sign-out`,
     method: 'DELETE',
-    data: formData,
     headers: {
       Authorization: 'Bearer ' + store.user.token,
     }
