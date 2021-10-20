@@ -78,8 +78,10 @@ const signOutSuccess = function (responseData) {
   $("#display-message").removeClass();
   $("#display-message").addClass("text-success");
   $("form").trigger("reset");
-  $("#before-sign-in").show();
+  $("#sign-up-in").show();
   $("#after-sign-in").hide();
+  $('.footer').hide()
+  $('.container').hide()
   console.log("responseData is", responseData);
 };
 
