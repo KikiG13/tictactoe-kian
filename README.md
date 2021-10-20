@@ -13,7 +13,7 @@ Good luck!
 (https://kikig13.github.io/tictactoe-kian)
 
 ## Wireframe
-[Imgur](https://i.imgur.com/dOmcbCT.jpg)
+![Wireframe](https://i.imgur.com/dOmcbCT.jpg)
 
 ## User Stories
    -As a user I want the webpage to be be clear so that I'm not confused.
