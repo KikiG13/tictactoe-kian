@@ -13,3 +13,13 @@ Good luck!
 (https://kikig13.github.io/tictactoe-kian)
 
 
+[Imgur](https://i.imgur.com/dOmcbCT.jpg)
+
+##User Stories
+   -As a user I want the webpage to be be clear so that I'm not confused.
+   -As a user I want to sign up once so that I don't have to create an account every time I play.
+   -As a user I want to sign out so that my account is secure.
+   -As a user I want to know if I or my opponent won so that we have competitive fun.
+   -As a user a want the game to end so there is no confusion about who won.
+   -As a user I want to be able to play again.
+   -As a user I want the score to be recorded.
