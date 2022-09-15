@@ -58,6 +58,7 @@ const newGameSuccess = function (responseData) {
   $('#box').on('click', store.turns)
   $('.footer').show()
   $('#play-again').show()
+  $('.board').show()
 
   console.log('responseData is', responseData)
 }
@@ -105,6 +106,7 @@ const signOutSuccess = function (responseData) {
   $('#after-sign-in').hide()
   $('.footer').hide()
   $('.container').hide()
+  $('.board').hide()
   console.log('responseData is', responseData)
 }
 
