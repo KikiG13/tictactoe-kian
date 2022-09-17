@@ -208,17 +208,30 @@ body {
 }
 
 #play-again {
+  position: fixed;
+  left: 5rem;
+  bottom: 8rem;
+
   margin: 1rem 2rem 1rem 2rem;
   // margin-bottom: 2rem;
   // margin-left: 2rem;
 }
 
 #sign-out {
+  position: fixed;
+  left: 5rem;
+  bottom: 5rem;
   margin-left: 2rem;
 }
 
 .startup {
   text-align: center;
   margin: 5rem;
+}
+
+#display-message {
+  position: fixed;
+  left: 7rem;
+  bottom: 13rem;
 }
 
